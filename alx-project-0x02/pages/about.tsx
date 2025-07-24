@@ -1,3 +1,4 @@
+import Button from "@/components/common/Button";
 import Header from "@/components/layout/Header";
 
 const About: React.FC = () => {
@@ -9,6 +10,11 @@ const About: React.FC = () => {
         <p className="text-gray-700">
           This is the about route in our basic Next.js setup.
         </p>
+        <div className="flex flex-wrap gap-4 justify-center items-center mt-10">
+          <Button size="small" shape="rounded-sm" />
+          <Button size="medium" shape="rounded-md" />
+          <Button size="large" shape="rounded-full" />
+        </div>
       </div>
     </>
   );
