@@ -1,6 +1,6 @@
 import PostCard from "@/components/common/PostCard";
 import Header from "@/components/layout/Header";
-import { PostProps } from "@/interfaces";
+import { PostProps, RawPost } from "@/interfaces";
 
 interface PostsPageProps {
   posts: PostProps[];
@@ -17,8 +17,8 @@ const Posts: React.FC<PostsPageProps> = ({ posts }) => {
         </p>
 
         <div className="flex justify-center flex-wrap gap-6 mt-12 ">
-          {posts.map((post) => (
-            <PostCard key={post.id} {...post} />
+          {posts.map((post, key: number) => (
+            <PostCard key={key} {...post} />
           ))}
         </div>
       </div>
@@ -28,7 +28,18 @@ const Posts: React.FC<PostsPageProps> = ({ posts }) => {
 
 export async function getStaticProps() {
   const result = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const posts = await result.json();
+  if (!result.ok) {
+    throw new Error("Failed to fetch posts");
+  }
+  const data: RawPost[] = await result.json();
+
+  const posts: PostProps[] = data.map((post) => ({
+    id: post.id,
+    userId: post.userId,
+    title: post.title,
+    content: post.body, // renaming 'body' to 'content'
+  }));
+
   return { props: { posts } };
 }
 

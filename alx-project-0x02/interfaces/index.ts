@@ -17,6 +17,13 @@ export interface PostProps {
   id: number;
   userId: number;
   title: string;
+  content: string;
+}
+
+export interface RawPost {
+  userId: number;
+  id: number;
+  title: string;
   body: string;
 }
 

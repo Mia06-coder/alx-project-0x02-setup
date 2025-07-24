@@ -12,6 +12,7 @@ This repository documents the setup and structure of a Next.js project scaffolde
 
 ![Landing Page](./public/assets/images/landing_page.png)
 ![Home Page](./public/assets/images/home_page.png)
+![About Page ](./public/assets/images/about_page.png)
 ![Post Modal ](./public/assets/images/post-modal.png)
 ![Posts Page](./public/assets/images/posts_page.png)
 ![Users Page](./public/assets/images/users_page.png)
