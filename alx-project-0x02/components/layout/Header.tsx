@@ -4,7 +4,7 @@ const Header: React.FC = () => {
   return (
     <header className="bg-black text-white font-medium py-4 px-8 shadow-md">
       <nav className="flex justify-center items-center">
-        <ul className="flex justify-center items-center gap-12">
+        <ul className="flex flex-wrap  justify-center items-center gap-12">
           <li>
             <Link href="./home">HOME</Link>
           </li>
@@ -13,6 +13,9 @@ const Header: React.FC = () => {
           </li>
           <li>
             <Link href="./posts">POSTS</Link>
+          </li>
+          <li>
+            <Link href="./users">USERS</Link>
           </li>
         </ul>
       </nav>
