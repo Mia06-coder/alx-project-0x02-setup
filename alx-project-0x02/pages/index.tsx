@@ -1,6 +1,6 @@
 import Header from "@/components/layout/Header";
 
-const Home: React.FC = () => {
+const Landing: React.FC = () => {
   return (
     <>
       <Header />
@@ -11,4 +11,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default Landing;
